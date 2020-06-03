@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"os"
-	"sort"
 
 	"github.com/urfave/cli"
 )
@@ -13,10 +12,10 @@ import (
 var Version = "SNAPSHOT"
 
 // AppName of this application
-var AppName = "Command Line Tool Util"
+var AppName = "TLS Check Tool"
 
 // AppUsage of this application
-var AppUsage = "A Command Line Tool"
+var AppUsage = "Check the TLS support situation of server"
 
 func main() {
 	app := cli.NewApp()
@@ -25,11 +24,8 @@ func main() {
 	app.Usage = AppUsage
 	app.Flags = options
 	app.EnableBashCompletion = true
-	app.Commands = []cli.Command{
-		commandStart,
-	}
 
-	sort.Sort(cli.CommandsByName(app.Commands))
+	app.Action = action
 
 	if err := app.Run(os.Args); err != nil {
 		log.Fatal(err)

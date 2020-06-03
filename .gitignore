@@ -16,6 +16,7 @@ pdi-util*
 build
 test
 output
+main/main
 output.*
 *.xlsx
 main/*cli*

@@ -2,7 +2,7 @@
 
 # cli file name
 # change this please
-OUTPUT_FILENAME="cli"
+OUTPUT_FILENAME="tls-check"
 
 # platforms
 PLATFORMS="darwin/amd64"

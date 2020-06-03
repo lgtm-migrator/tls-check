@@ -4,8 +4,9 @@ import "github.com/urfave/cli"
 
 var options = []cli.Flag{
 	&cli.StringFlag{
-		Name:   "username, u",
-		EnvVar: "USER",
-		Usage:  "Username",
+		Name:   "url, u",
+		EnvVar: "TLS_CHECK_URL",
+		Usage:  "target test url",
+		Value:  "https://github.com",
 	},
 }
